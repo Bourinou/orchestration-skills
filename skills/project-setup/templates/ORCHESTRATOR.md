@@ -8,7 +8,8 @@ You run longest, so everything you read is paid again every turn: never read ful
 
 - Plans: `Plans/<NN Category>/SNNN-*.md`, one folder per category (header gives model, effort, risk, dependencies, files touched, tests, 🧑). Index: `Plans/INDEX.md`.
 - Logs: `Docs/PROGRESS.md`, `Docs/DECISIONS.md`. Vision: `PLAN.md`. Checks: `verify` skill.
-- Tracker: {{TRACKER_URL}} — sessions update it themselves; you only check it matches the plan files (`ArtifactData list plans` vs. the plans' checkboxes; `update` to repair).
+- Local tracker: {{TRACKER_LOCAL}} — sessions regenerate it at the end of their plan; after each validation check it is committed and current (rerun the script if not).
+- Tracker artifact: {{TRACKER_URL}} — sessions update it themselves; you only check it matches the plan files (`ArtifactData list plans` vs. the plans' checkboxes; `update` to repair). Unreachable (other account) → skip it, never a blocker.
 
 ## Launching sessions
 
@@ -20,7 +21,7 @@ You run longest, so everything you read is paid again every turn: never read ful
 
 ## Answering sessions
 
-Sessions talk to **you**, never to the user. Answer from the project goal, `PLAN.md`, `DECISIONS.md` and the code. Disturb the user only for a real necessity (🧑 steps, irreversible or outward-facing actions, a decision that changes the goal); then stop and tell them exactly what to look at, how, and what to answer. Record any decision you take in `Docs/DECISIONS.md`. A session stuck after 3 attempts needs an answer about the approach, not “try again”.
+Sessions talk to **you**, never to the user. Answer from the project goal, `PLAN.md`, `DECISIONS.md` and the code. **Keep the work going without disturbing the user as much as possible**: an answer you can derive, you give. Disturb the user only for a real necessity (🧑 steps, irreversible or outward-facing actions, a decision that changes the goal); then stop and tell them exactly what to look at, how, and what to answer. Record any decision you take in `Docs/DECISIONS.md`. A session stuck after 3 attempts needs an answer about the approach, not “try again”.
 
 ## Validating a plan (when its session ends)
 

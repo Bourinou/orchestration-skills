@@ -1,6 +1,6 @@
 ---
 name: plan-generate
-description: Split a project goal (or a new feature/phase) into right-sized session plans Plans/<NN Category>/SNNN-*.md (one folder per category) for the /project-setup workflow - each plan small enough for one low-context session, but trivial work is not split. Updates Plans/INDEX.md and seeds the tracker artifact. Use when the user types /plan-generate, or asks to "generate the plans", "break this goal into plans/sessions", "add plans for <feature>".
+description: Split a project goal (or a new feature/phase) into right-sized session plans Plans/<NN Category>/SNNN-*.md (one folder per category) for the /project-setup workflow - each plan small enough for one low-context session, but trivial work is not split. Updates Plans/INDEX.md and seeds the tracker (local page and/or artifact). Use when the user types /plan-generate, or asks to "generate the plans", "break this goal into plans/sessions", "add plans for <feature>".
 ---
 
 # /plan-generate
@@ -61,7 +61,11 @@ Show a compact table grouped by category: ID · title · model/effort · risk ·
 
 ## Step 6 — Seed the tracker
 
-ToolSearch `select:ArtifactData`, then `batch` writes (up to 50 per call), one `set` per new plan: `url` = tracker URL from CLAUDE.md, `collection: "plans"`, `doc_id` = plan id, `data: {"title": <title without the id>, "category": <folder name>, "categoryOrder": <its NN as a number>, "model": "<model effort>", "human": true/false, "status": "todo", "items": [{"text": <step>, "done": false} per checkbox], "updated": <ISO now>}` (new docs: no `if_version`; existing docs: `list` first and pin each write with its `version`). Then `ArtifactData list plans` to verify.
+Work without stopping for the user unless a choice truly changes the goal: decide, note it in `Docs/DECISIONS.md`, continue.
+
+**Local tracker** (CLAUDE.md names `Docs/tracker.html`): run `python Docs/tools/gen_tracker.py` and commit `Docs/tracker.html`.
+
+**Tracker artifact** (CLAUDE.md has a tracker URL; skip with one line if unreachable from this account): ToolSearch `select:ArtifactData`, then `batch` writes (up to 50 per call), one `set` per new plan: `url` = tracker URL from CLAUDE.md, `collection: "plans"`, `doc_id` = plan id, `data: {"title": <title without the id>, "category": <folder name>, "categoryOrder": <its NN as a number>, "model": "<model effort>", "human": true/false, "status": "todo", "items": [{"text": <step>, "done": false} per checkbox], "updated": <ISO now>}` (new docs: no `if_version`; existing docs: `list` first and pin each write with its `version`). Then `ArtifactData list plans` to verify.
 
 ## Step 7 — Hand over
 
