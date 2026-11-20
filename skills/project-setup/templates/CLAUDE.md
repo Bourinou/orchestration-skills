@@ -10,11 +10,12 @@
 4. **Stay in scope.** Out-of-scope ideas go to `Docs/PROGRESS.md` (“Later”), not into the code.
 5. **Invent nothing**: check the code/docs; if a fact is still missing, ask — the **orchestrator** if you were started by one (never the user directly), otherwise the user.
    **Keep working without disturbing the user** whenever possible: decide from the code, docs and `DECISIONS.md`, record the choice, and move on. Stop for the user only for 🧑 steps, irreversible or outward-facing actions, or a decision that changes the goal.
-6. **Verify by running, not by claiming** (`verify` skill): area tests while iterating, full suite before the final commit, compact output.
-7. **3 strikes**: same check still failing after 3 fix attempts → stop editing; report what fails, what you tried, which assumption may be wrong.
-8. **Never weaken a judge**: no deleted, skipped or loosened test (weaker assertion, retry, sleep, wider tolerance) and no edited end criterion unless your PROGRESS entry says why.
-9. **End of session**: (a) end criteria verified **by commands**; (b) `Docs/PROGRESS.md` entry (≤ 15 lines: done, verified how, not done, later); (c) `Docs/DECISIONS.md` if a decision binds later plans; (d) tick your line in `Plans/INDEX.md` (no commentary); (e) commit (§6){{TAG_RULE}}; (f) short report: done, not done, what the user/orchestrator must do, and any instruction that cost more than it gave.
-10. **Languages**: answer in {{USER_LANGUAGE}}. Code, comments and {{DELIVERABLE_DOCS}} in {{DELIVERABLE_LANGUAGE}}. Internal docs (`CLAUDE.md`, `Plans/`, `PROGRESS.md`) in {{INTERNAL_LANGUAGE}}.
+6. **Code quality**: apply the `code-principles` skill (KISS > DRY > SOLID) to code you write or touch, and check your diff against it before committing.
+7. **Verify by running, not by claiming** (`verify` skill): area tests while iterating, full suite before the final commit, compact output.
+8. **3 strikes**: same check still failing after 3 fix attempts → stop editing; report what fails, what you tried, which assumption may be wrong.
+9. **Never weaken a judge**: no deleted, skipped or loosened test (weaker assertion, retry, sleep, wider tolerance) and no edited end criterion unless your PROGRESS entry says why.
+10. **End of session**: (a) end criteria verified **by commands**; (b) `Docs/PROGRESS.md` entry (≤ 15 lines: done, verified how, not done, later); (c) `Docs/DECISIONS.md` if a decision binds later plans; (d) tick your line in `Plans/INDEX.md` (no commentary); (e) commit (§6){{TAG_RULE}}; (f) short report: done, not done, what the user/orchestrator must do, and any instruction that cost more than it gave.
+11. **Languages**: answer in {{USER_LANGUAGE}}. Code, comments and {{DELIVERABLE_DOCS}} in {{DELIVERABLE_LANGUAGE}}. Internal docs (`CLAUDE.md`, `Plans/`, `PROGRESS.md`) in {{INTERNAL_LANGUAGE}}.
 
 **Local tracker** {{TRACKER_LOCAL}} — at the end of your plan (after ticking your INDEX line): run `python Docs/tools/gen_tracker.py` and include `Docs/tracker.html` in your commit.
 

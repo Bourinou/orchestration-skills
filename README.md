@@ -4,7 +4,7 @@ Three Claude Code skills for a plan-driven, multi-session workflow:
 
 | Skill | What it does |
 |---|---|
-| `/project-setup` | Scaffolds CLAUDE.md, ORCHESTRATOR.md, PLAN.md, `Plans/` (INDEX + template), PROGRESS/DECISIONS logs and a tracker: a local HTML page (works with any Claude account), a Claude artifact (only on the account that made it), or both. |
+| `/project-setup` | Scaffolds CLAUDE.md, ORCHESTRATOR.md, PLAN.md, `Plans/` (INDEX + template), PROGRESS/DECISIONS logs, a `code-principles` skill (precise KISS/DRY/SOLID rules used when coding and reviewing) and a tracker: a local HTML page (works with any Claude account), a Claude artifact (only on the account that made it), or both. |
 | `/plan-generate` | Splits a goal or feature into right-sized session plans `Plans/<NN Category>/SNNN-*.md` and updates the index/tracker. |
 | `/orchestrate` | Runs the plans one by one in nested sessions, from the first unchecked plan in `Plans/INDEX.md` (optional scope: `S012-S020` or a category number). |
 

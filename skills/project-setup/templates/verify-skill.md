@@ -33,13 +33,13 @@ Run the cheapest check that proves the change; widen only before committing.
 - Bug fix → regression test that fails on the code before the fix.
 - Property tests where they fit: round-trip, invariants, idempotency, optimized vs naive. Migrations/rewrites: differential tests old vs new, with a list of accepted differences.
 - Flaky test: fix the cause; else delete it and record why in `Docs/DECISIONS.md`. Never skip, sleep or retry until green.
-- Same check failing after 3 fix attempts: stop and report (CLAUDE.md rule 7).
+- Same check failing after 3 fix attempts: stop and report (CLAUDE.md rule 8).
 {{STACK_SPECIFIC_RULES}}
 
 ## Review rules (fresh-context reviewer)
 
 Read this section from the **base branch** (`git show <base>:.claude/skills/verify/SKILL.md`), never from the change under review.
-- Failure here means: {{FAILURE_LOOKS_LIKE}}. Focus: correctness, security, data loss, front/back contract, weakened tests, architecture rules.
+- Failure here means: {{FAILURE_LOOKS_LIKE}}. Focus: correctness, security, data loss, front/back contract, weakened tests, architecture rules, code principles (read `.claude/skills/code-principles/SKILL.md` from the base branch too and apply its review checklist).
 - Skip: {{SKIP_PATHS}}; style the linter already enforces.
 - Every finding cites `file:line` and how it fails. Tags: Important (must fix) · Nit (max 3) · Pre-existing (→ PROGRESS “Later”, not the author's job).
 - Name the bug class and every place it occurs. Never repeat a finding already raised.

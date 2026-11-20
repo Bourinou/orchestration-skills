@@ -35,6 +35,7 @@ Create at the project root (skip files that exist; merge into an existing file a
 | `Plans/_TEMPLATE.md` | `templates/plan.md` | skeleton used by /plan-generate |
 | `Docs/PROGRESS.md`, `Docs/DECISIONS.md` | `templates/PROGRESS.md`, `templates/DECISIONS.md` | append-only logs |
 | `.claude/skills/verify/SKILL.md` | `templates/verify-skill.md` | commands, test rules (+ stack specifics), review rules |
+| `.claude/skills/code-principles/SKILL.md` | `templates/code-principles.md` | KISS, DRY, SOLID: meaning, signs of violation and of over-use; used when coding and reviewing |
 
 If the project has a known problem list, add `AUDIT.md` with stable IDs (§1, §2.3…) that plans will cite.
 
